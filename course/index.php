@@ -5,6 +5,7 @@
 
     $page    = $_GET['page'];
     $size    = $_GET['size'];
+    $type    = $_GET['type'];
  
     $low   = (($page - 1) * $size + 1);
     $hight = $page * $size;
@@ -14,7 +15,7 @@
         return;
     } 
 
-    $query = "SELECT * FROM hot WHERE id BETWEEN $low AND $hight ";
+    $query = "SELECT * FROM course WHERE  id BETWEEN $low AND $hight  AND type = '$type'  ";
     $stm = $pdo->prepare($query);
     $stm->execute();
     $result =  $stm->fetchAll();

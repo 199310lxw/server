@@ -8,7 +8,7 @@
 	
 	 //连接数据库
     try {
-        $dsn = "mysql:host=" .$db_host. ";dbname=" .$db_name. ";port=" .$db_port. ";charset=" .$charset ;
+          $dsn = "mysql:host=" .$db_host. ";dbname=" .$db_name. ";port=" .$db_port. ";charset=" .$charset ;
         $option = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
