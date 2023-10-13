@@ -5,7 +5,6 @@
 
    session_start();
 
-
    if($_SERVER['REQUEST_METHOD'] <> 'POST') {
           $output = array(
             'code' => "405",
@@ -15,6 +14,8 @@
         echo json_encode($output);
         return;
     } 
+
+    $session = 
 
     $phone = $_POST['phone'];
     $password = $_POST['password'];
@@ -50,20 +51,27 @@
             //  $_SESSION['phone'] = $phone;
             //  $_SESSION['pwssword'] = $password;
              $session = new Session();
-             $session->setSession('user',$session_data,60);
-        
-              foreach ($result1 as $row) {
-                   $data["phone"] = $row["phone"];
-                   $data["headUrl"] = $row["headUrl"];
-                   $data["name"] = $row["name"];
-                   $data["session"] = session_id();
-              }
-             $output = array(
-                  'code' => "0",
-                  'msg' => "登陆成功",
-                  'data' => $data,
-              );
-
+             $session->setSession('user',$session_data);
+             $sessionId = session_id();
+             $query_update =  "UPDATE user SET session = '$sessionId' WHERE phone = '$phone' ";
+             if($pdo->query($query_update)) {
+                  foreach ($result1 as $row) {
+                      $data["phone"] = $row["phone"];
+                      $data["password"] = $row["password"];
+                      $data["icon"] = $row["icon"];
+                      $data["username"] = $row["username"];
+                      $data["nickname"] = $row["nickname"];
+                      $data["sex"] = $row["sex"];
+                      $data["birthday"] = $row["birthday"];
+                      $data["signature"] = $row["signature"];
+                      $data["session"] = $sessionId;
+                  }
+                    $output = array(
+                        'code' => "0",
+                        'msg' => "登陆成功",
+                        'data' => $data,
+                    );
+               }
           }
     }
 

@@ -9,8 +9,7 @@
  
     $low   = (($page - 1) * $size + 1);
     $hight = $page * $size;
-    $sessionId = $_SERVER['HTTP_SESSION'];
-
+  
     if($_SERVER['REQUEST_METHOD'] <> 'GET') {
           echo '请求方式错误';
         return;
