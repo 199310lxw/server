@@ -1,7 +1,7 @@
 <?php 
 
-    // require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
-    require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+    require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
+    // require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
 
     $page    = $_GET['page'];
     $size    = $_GET['size'];

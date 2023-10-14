@@ -1,5 +1,6 @@
 <?php 
-   require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+//    require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+   require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
  
    if($_SERVER['REQUEST_METHOD'] <> 'POST') {
           $output = array(
@@ -18,11 +19,6 @@
     $birthday =  $_POST['birthday'];
     $icon = $_POST['icon'];
     $signature = $_POST['signature'];
-   
-    // $query_search = "SELECT phone FROM user WHERE phone = '$phone' ";
-    // $stmt = $pdo->prepare($query_search);
-    // $stmt->execute();
-    // $result =  $stmt->fetchAll();
 
     $query_update =  "UPDATE user SET sex = '$sex', nickname = '$nickname',birthday = '$birthday',icon = '$icon',signature = '$signature'  WHERE phone = '$phone' ";
         if($pdo->query($query_update)) {
@@ -39,7 +35,7 @@
                 $data["sex"] = $row["sex"];
                 $data["birthday"] = $row["birthday"];
                 $data["signature"] = $row["signature"];
-                $data["session"] = $sessionId;
+                $data["session"] = $row["session"];
             }
             $output = array(
                 'code' => "0",

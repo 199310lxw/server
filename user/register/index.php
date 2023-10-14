@@ -1,6 +1,7 @@
 <?php
   
-   require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+   require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
+//    require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
    
    $phone    = $_REQUEST['phone'];
    $password = $_REQUEST['password'];
