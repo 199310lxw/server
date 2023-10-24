@@ -7,7 +7,7 @@ class UploadPic
     // 定义成员变量
     private $allow_type = array('image/jpeg','image/pjpeg','image/jpg','image/png','image/x-png','image/gif');
     private $max_size = 10 * 1024 * 1024;
-    private $upload_path = 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\user\icon\ ';
+    private $upload_path = 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\user\icon\\';
     private $error = '';
 
     /**
@@ -56,17 +56,17 @@ class UploadPic
         // 新文件名，生成唯一的文件名，并保留原有的文件扩展名
         $new_fileName = uniqid($prefix).strrchr($file['name'],'.');
         // 确定当前子目录
-        $sub_path ='pic'. date('Ymd');
+        // $sub_path ='pic'. date('Ymd');
         // 确定文件上传全路径
-        $upload_path = $this->upload_path.$sub_path;
+        // $upload_path = $this->upload_path.$sub_path;
+         $upload_path = $this->upload_path;
         // 判断目录是否存在
         if (!is_dir($upload_path)){
             mkdir($upload_path);
         }
         // 移动文件
-        if (move_uploaded_file($file['tmp_name'],$upload_path.'/'.$new_fileName)){
-            // succ
-            return 'server/user/icon/'.$sub_path.'/'.$new_fileName;
+        if (move_uploaded_file($file['tmp_name'],$upload_path.'\\'.$new_fileName)){
+            return 'server/user/icon/'. $new_fileName;
         }else{
             $this->error = '上传失败！';
             return false;

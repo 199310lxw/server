@@ -39,7 +39,7 @@
                 $data["sex"] = $row["sex"];
                 $data["birthday"] = $row["birthday"];
                 $data["signature"] = $row["signature"];
-                $data["session"] = $sessionId;
+                $data["session"] = $row["session"];
             }
             $output = array(
                 'code' => "0",
