@@ -1,9 +1,8 @@
 <?php
-    require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
-    // require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
-    // require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\user\upload\upload.php';
-    require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\user\upload\upload.php';
-//    require_once ("uploadPic.php");
+    // require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
+    require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+  require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\user\upload\upload.php';
+    // require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\user\upload\upload.php';
    $pic_path = '';
    $result = array();
 

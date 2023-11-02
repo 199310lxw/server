@@ -1,7 +1,7 @@
 <?php 
 
-     require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
-    // require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
+    //  require_once 'E:\server\phpstudy\phpstudy_pro\WWW\server\db\connect_db.php';
+     require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\db\connect_db.php';
     // require_once 'D:\Server\PhpStudy\phpstudy_pro\WWW\server\session\session.php';
    
     $page    = $_GET['page'];
@@ -20,7 +20,7 @@
     getResult($pdo,$low,$hight);
 
     function getResult($pdo,$low,$hight) {
-         $query = "SELECT * FROM hot WHERE id BETWEEN $low AND $hight ";
+         $query = "SELECT * FROM video WHERE id BETWEEN $low AND $hight ";
          $stmt = $pdo->prepare($query);
          $stmt->execute();
          $result =  $stmt->fetchAll();
